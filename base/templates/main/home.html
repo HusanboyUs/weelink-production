@@ -1,0 +1,132 @@
+{%load static%}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+
+        <title>Weelink</title>
+    </head>
+    <body>
+        <!--=============== HEADER ===============-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">WEELINK</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About us</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact us</a>
+                        </li>
+
+                        <i class='bx bx-toggle-left change-theme' id="theme-button"></i>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+
+                
+                <a href="{% url 'loginView'%}" class="button button__header">My Profile </a>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--=============== HOME ===============-->
+            <section class="home section" id="home">
+                <div class="home__container container grid">
+                    <!--svg-->
+                    <img src="{%static 'images/bg-anim.gif' %}" alt="image">
+                    
+                            
+
+                    <div class="home__data">
+                        <h1 class="home__title">Share links <br> Simple and Free</h1>
+                        <p class="home__description">Share more with your followers in a single click.Your one and unique bio link.</p>
+
+                        <a href="{%url 'registerView'%}" class="button">Start for free</a>
+
+                    </div>   
+                </div>
+            </section>
+
+            <!--=============== ABOUT ===============-->
+            <section class="about section container" id="about">
+                <div class="about__container grid">
+                    <div class="about__data">
+                        <h2 class="section__title-center">Discover More <br> About Us</h2>
+                        <p class="about__description">Create and manage multiple bio link pages for your personal accounts or for a team from one dedicated dashboard.
+                        </p>
+                    </div>
+                    <img src="{%static 'images/bg-anim2.gif' %}" alt="image">
+                    <!--svg-->
+                </div>
+            </section>
+
+            <!--=============== SECURITY ===============-->
+            <!--
+            <section class="security section container">
+                <div class="security__container grid">
+                    <div class="security__data">
+                        <h2 class="section__title-center">Your Safety Is <br> Important</h2>
+                        <p class="security__description">When your order reaches you, we have the health safety protocols, 
+                            so that you are protected from any disease. Watch the video of how the delivery is made.
+                        </p>
+                    </div>
+
+                    
+                </div>
+            </section>
+            -->
+
+            <!--=============== SERVICES ===============-->
+
+            <!--=============== APP ===============-->
+          
+
+            <!--=============== CONTACT US ===============-->
+            <section class="contact section container" id="contact">
+                <div class="contact__container grid">
+                    <div class="contact__content">
+                        <h2 class="section__title-center">Contact Us From <br> Here</h2>
+                        <p class="contact__description">You can contact us from here, you can write to us, 
+                            call us or visit , we will gladly assist you.</p>
+                    </div>
+
+                    <ul class="contact__content grid">
+                        <li class="contact__address">Email:  <span class="contact__information">khusanghost@gmail.com</span></li>
+                        <li class="contact__address">Location: <span class="contact__information">Poland, Warsaw</span></li>
+                    </ul>
+
+                    <div class="contact__content">
+                        <a href="{% url 'contactView'%}" class="button">Contact Us</a>
+                    </div>
+                </div>
+                <a href="https://storyset.com/online">Online illustrations by Storyset</a>
+            </section>
+            
+        </main>
+
+        <!--=============== FOOTER ===============-->
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+        </a>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="{%static 'js/home.js'%}"></script>
+    </body>
+</html>

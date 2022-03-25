@@ -1,0 +1,65 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet"  type="text/css" href="{%static 'styles/profile.css' %}">
+    
+   
+    
+</head>
+<body>
+    <div class="profile-card">
+        <div class="card-header">
+            <div class="pic">
+                {%if profile.avatar%}
+                    <img src="{{profile.avatar.url}}" alt="Avatar Pic">
+                {%else%}
+                    <img src="https://cdn-icons-png.flaticon.com/512/3237/3237472.png" alt="Avatar Pic">
+                {%endif%}     
+            </div>
+          
+            {%if user.is_superuser%}
+            <div class="name">{{profile.name}} <img src="https://img.icons8.com/color/20/000000/verified-account.png"/></div>
+            {%else%}
+            <div class="name">{{profile.name}}</div>
+            {%endif%}      
+            <div class="desc">{{profile.bio}}</div>
+            <div class="location" style="color: white; font-size: small;"><i class="fa-solid fa-house-user"></i> Based in</a> {{profile.location}}</div>
+            <div class="sm">
+                <a href="{{user.userprofile.facebook}}" class="fab fa-facebook " style="text-decoration: none;"></a>
+                <a href="{{user.userprofile.instagram}}" class="fab fa-instagram" style="text-decoration: none;"></a>
+                <a href="{{user.userprofile.telegram}}" class="fab fa-telegram" style="text-decoration: none;"></a>
+                
+                
+            </div>   
+        </div>
+        <div class="card-footer">
+            <div class="d-grid gap-2">
+               
+                
+            {%for links in links%}
+                    
+                    <a href="{{ links.link}}" class="btn btn-lg  bg-success" type="button" style="background-color: #F73F52; color: white;">{{  links.link_name}}</a>
+                
+            {%endfor%}
+               <br>
+                
+             
+                
+                
+                <a href="{% url 'loginView' %}" class="btn btn-lg  bg-primary btn-sm" type="button" style="background-color: #F73F52; color: white;"><i class="fa-solid fa-link"></i> Make my Weelink</a>
+              </div> 
+        </div> 
+        <br>
+        
+    </div>
+    
+</body>
+</html>
