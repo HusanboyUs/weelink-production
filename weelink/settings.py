@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from pickle import FALSE
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hq@ef3hm($gbuj3l(4zy*_33uhf%6)$l7w&e+av_cn84!b#o6o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -93,10 +94,21 @@ WSGI_APPLICATION = 'weelink.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+#DATABASES = {
+    #'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+    #}
+#}
+
+DATABASES={
+    'default':{
+        'ENGINE':'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dd7v2qqn3vmed6',
+        'USER':'jfilbzlgxibmhb',
+        'PASSWORD':'97f2ffb2f9ea0b77ab9759b63567d40d2c1326222b84eae0b644d81a4849e6c2',
+        'HOST':'ec2-44-194-167-63.compute-1.amazonaws.com',
+        'PORT':'5432',
     }
 }
 
