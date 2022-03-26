@@ -1,4 +1,5 @@
 {%load static %}
+{% load socialaccount %}
 <!DOCTYPE html>
 <!-- Created By CodingNepal -->
 <html lang="en" dir="ltr">
@@ -22,7 +23,7 @@
             <div class="slide-controls">
                <input type="radio" name="slide" id="login" checked>
                <input type="radio" name="slide" id="signup">
-               <label for="login" class="slide login">Google</label>
+               <label for="login" class="slide login"><a href="{% provider_login_url 'google' %}" style="text-decoration: none;">Google</a></label>
                <label for="signup"  class="slide signup"><a href="{%url 'homeView'%}" style="text-decoration: none;">Home</a></label>
                <div class="slider-tab"></div>
             </div>
@@ -51,7 +52,9 @@
                   
                   <div class="signup-link">
                      Not a member? <a href="{%url 'registerView'%}">Signup now</a>
-                     
+                     <br>
+                     <a href="{% provider_login_url 'google' %}">Login with Google</a>
+                     {{form.errors}}
                   </div>
                   
                </form>

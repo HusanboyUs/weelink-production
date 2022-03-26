@@ -1,4 +1,5 @@
 {%load static%}
+{% load socialaccount %}
 <!DOCTYPE html>
 <!-- Created By CodingNepal -->
 <html lang="en" dir="ltr">
@@ -22,8 +23,8 @@
             <div class="slide-controls">
                <input type="radio" name="slide" id="login" checked>
                <input type="radio" name="slide" id="signup">
-               <label for="login" class="slide login">Google</label>
-               <label for="signup" class="slide signup">Facebook</label>
+               <a href="{% provider_login_url 'google' %}" for="login" class="slide login">Google</a>
+               <label for="signup" class="slide signup"></label>
                <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
