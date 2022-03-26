@@ -25,7 +25,7 @@
                 {%endif%}     
             </div>
           
-            {%if user.is_superuser%}
+            {%if profile.verif == True%}
             <div class="name">{{profile.name}} <img src="https://img.icons8.com/color/20/000000/verified-account.png"/></div>
             {%else%}
             <div class="name">{{profile.name}} </div>
@@ -33,9 +33,9 @@
             <div class="desc">{{profile.bio}}</div>
             <div class="location" style="color: white; font-size: small;"><i class="fa-solid fa-house-user"></i> Based in</a> {{profile.location}}</div>
             <div class="sm">
-                <a href="{{user.userprofile.facebook}}" class="fab fa-facebook " style="text-decoration: none;"></a>
-                <a href="{{user.userprofile.instagram}}" class="fab fa-instagram" style="text-decoration: none;"></a>
-                <a href="{{user.userprofile.telegram}}" class="fab fa-telegram" style="text-decoration: none;"></a>
+                <a href="{{profile.facebook}}" class="fab fa-facebook " style="text-decoration: none;"></a>
+                <a href="{{profile.instagram}}" class="fab fa-instagram" style="text-decoration: none;"></a>
+                <a href="{{profile.telegram}}" class="fab fa-telegram" style="text-decoration: none;"></a>
                 
                 
             </div>   

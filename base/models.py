@@ -1,3 +1,4 @@
+from email.policy import default
 from pyexpat import model
 from random import choice, choices
 from xml.dom.minidom import CharacterData
@@ -19,7 +20,7 @@ class Profile(models.Model):
     telegram=models.CharField(max_length=100)
     created=models.DateTimeField(auto_now_add=True)
     slug=models.SlugField(unique=True, blank=True, null=True)
-    
+    verif=models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         self.slug =slugify(self.slug)
