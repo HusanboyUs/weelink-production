@@ -28,7 +28,7 @@
             {%if user.is_superuser%}
             <div class="name">{{profile.name}} <img src="https://img.icons8.com/color/20/000000/verified-account.png"/></div>
             {%else%}
-            <div class="name">{{profile.name}}</div>
+            <div class="name">{{profile.name}} </div>
             {%endif%}      
             <div class="desc">{{profile.bio}}</div>
             <div class="location" style="color: white; font-size: small;"><i class="fa-solid fa-house-user"></i> Based in</a> {{profile.location}}</div>
