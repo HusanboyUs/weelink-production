@@ -1,4 +1,3 @@
-
 from django.shortcuts import redirect, render, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
@@ -6,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Profile, ProfileLink
 from .forms import ContactForm, userRegisterForm,updateProfileForm,addLinksForm,editProfileLinkForm
 from django.contrib import messages
+
 
 def registerView(request):
     form=userRegisterForm()
@@ -39,7 +39,7 @@ def profileView(request):
 def updateProfileView(request):
     form=updateProfileForm
     if request.method=='POST':
-        form=updateProfileForm(request.POST,request.FILES, instance=request.user.userprofile)
+        form=updateProfileForm(request.POST,request.FILES, instance=request.user)
         if form.is_valid():
             instance=form.save(commit=False)
             instance.user=request.user
@@ -84,7 +84,7 @@ def userView(request, user_slug):
         context={'profile':profile, 'links':links}
     except:
         return render(request, 'main/not404.html')    
-    return render(request, 'main/user.html', context)
+    return render(request, 'main/user2.html', context)
 
 def homeView(request):
     users=Profile.objects.all()
