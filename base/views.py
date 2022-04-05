@@ -39,13 +39,12 @@ def profileView(request):
 def updateProfileView(request):
     form=updateProfileForm
     if request.method=='POST':
-        form=updateProfileForm(request.POST,request.FILES, instance=request.user)
+        form=updateProfileForm(request.POST,request.FILES, instance=request.user.userprofile)
         if form.is_valid():
             instance=form.save(commit=False)
             instance.user=request.user
             instance.save()
             return redirect('profileView')
-
     context={'form':form}
     return render(request, 'main/updateProfile.html', context)
 
