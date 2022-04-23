@@ -102,4 +102,5 @@ def ContactView(request):
     return render(request, 'main/contact.html', context)
 
 
-    
+def apiView(request, *args, **kwargs):
+    return HttpResponse('This function is still under development, please leave your gmail for future notifications once it is ready!')    

@@ -17,6 +17,8 @@ urlpatterns = [
     #path for conatact Page
     path('contact/', views.ContactView, name='contactView'),
     #for password reset function
+
+    path('api-documentation/', views.apiView, name='api-documentation')
   
 
 ]
