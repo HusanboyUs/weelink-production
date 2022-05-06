@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from requests import Response
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -10,3 +10,10 @@ class apiView(APIView):
         profile=Profile.objects.all()
         serializer=ProfileSerializer(profile, many=True)
         return Response(serializer.data)
+
+class UserView(APIView):
+    def get(self,request,slug):
+        profile=get_object_or_404(Profile, slug=slug)
+        serializer=ProfileSerializer(profile)
+        return Response(serializer.data)
+            

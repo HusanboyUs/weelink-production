@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import redirect, render, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
@@ -37,7 +38,9 @@ def profileView(request):
 
 @login_required(login_url='loginView')
 def updateProfileView(request):
-    form=updateProfileForm
+    owner=request.user
+    profile=Profile.objects.get(user=owner)
+    form=updateProfileForm(instance=profile)
     if request.method=='POST':
         form=updateProfileForm(request.POST,request.FILES, instance=request.user.userprofile)
         if form.is_valid():
@@ -103,4 +106,5 @@ def ContactView(request):
 
 
 def apiView(request, *args, **kwargs):
-    return HttpResponse('This function is still under development, please leave your gmail for future notifications once it is ready!')    
+    return render(request, 'main/apiDoc.HTML')
+       

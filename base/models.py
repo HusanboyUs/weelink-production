@@ -60,6 +60,7 @@ class Contact(models.Model):
         ('Profile Avatar','Profile Avatar'),
         ('Profile Settings','Profile Settings'),
         ('Another','Another'),
+        ('Request for API','Request for API'),
     )
     summary=models.CharField(max_length=25, choices=topic_choice)
     topic=models.TextField(max_length=200)
