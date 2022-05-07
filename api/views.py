@@ -2,8 +2,8 @@ from django.shortcuts import get_object_or_404
 from requests import Response
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import ProfileSerializer
-from base.models import Profile
+from .serializers import ProfileSerializer,LinkSerializer
+from base.models import Profile,ProfileLink
 
 class apiView(APIView):
     def get(self, request):
@@ -17,3 +17,8 @@ class UserView(APIView):
         serializer=ProfileSerializer(profile)
         return Response(serializer.data)
             
+class linkView(apiView):
+    def get(self, request):
+        link=ProfileLink.objects.all()
+        serializer=LinkSerializer(link, many=True)
+        return Response(serializer.data)        
