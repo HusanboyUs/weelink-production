@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.views.static import serve
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('adminlar/', admin.site.urls),
     path('', include('base.urls')),
     path('accounts/', include('allauth.urls')),
     #api only

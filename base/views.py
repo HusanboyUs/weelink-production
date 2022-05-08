@@ -1,6 +1,5 @@
 import re
 from django.shortcuts import redirect, render, get_object_or_404
-from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import Profile, ProfileLink
@@ -107,4 +106,4 @@ def ContactView(request):
 
 def apiView(request, *args, **kwargs):
     return render(request, 'main/apiDoc.HTML')
-       
+           
