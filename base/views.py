@@ -8,7 +8,6 @@ from django.contrib import messages
 
 
 def registerView(request):
-    form=userRegisterForm()
     if request.method=='POST':
         form=userRegisterForm(request.POST,)
         if form.is_valid():
@@ -18,6 +17,7 @@ def registerView(request):
     return render(request, 'main/signup.html',context)        
 
 def loginView(request):
+    form=userRegisterForm()
     if request.method=='POST':
         username=request.POST.get('username')
         password=request.POST.get('password')
@@ -25,7 +25,8 @@ def loginView(request):
         if user is not None:
             login(request, user)
             return redirect('profileView')
-    return render(request, 'main/login.html')
+    context={'form':form}        
+    return render(request, 'main/login.html', context)
 
 @login_required(login_url='loginView')
 def profileView(request):

@@ -54,7 +54,10 @@
                      Not a member? <a href="{%url 'registerView'%}">Signup now</a>
                      <br>
                      <a href="{% provider_login_url 'google' %}">Login with Google</a>
-                     {{form.errors}}
+
+                     <p>{{form.errors}}</p>
+
+
                   </div>
                   
                </form>
