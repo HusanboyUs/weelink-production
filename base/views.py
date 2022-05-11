@@ -14,7 +14,7 @@ def registerView(request):
             form.save()
             return redirect('loginView')  
     context={'form':form}
-    return render(request, 'main/signup.html',context)        
+    return render(request, 'main/signup.html', context)        
 
 def loginView(request):
     form=userRegisterForm()
@@ -25,6 +25,8 @@ def loginView(request):
         if user is not None:
             login(request, user)
             return redirect('profileView')
+        else:
+            messages.error(request, 'Your credentials did not mach ours')    
     context={'form':form}        
     return render(request, 'main/login.html', context)
 

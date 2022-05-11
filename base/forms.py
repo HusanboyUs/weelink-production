@@ -12,6 +12,7 @@ class userRegisterForm(UserCreationForm):
             'email' : forms.EmailInput(attrs={'placeholder':'Your Email'}),
             
         }
+     
 
 class updateProfileForm(forms.ModelForm):
     class Meta:

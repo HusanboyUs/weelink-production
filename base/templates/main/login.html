@@ -34,7 +34,6 @@
                   {%csrf_token%}
                   <div class="field">
                      <input type="text" placeholder="username" required name="username">
-                     
                   </div>
                   <div class="field">
                      <input type="password" placeholder="Password" required name="password">
@@ -55,7 +54,14 @@
                      <br>
                      <a href="{% provider_login_url 'google' %}">Login with Google</a>
 
-                     <p>{{form.errors}}</p>
+                     
+                    {% if messages %}
+                    <ul class="messages">
+                     {% for message in messages %}
+                      {{message}}
+                     {% endfor %}
+                 </ul>
+                    {% endif %}
 
 
                   </div>
