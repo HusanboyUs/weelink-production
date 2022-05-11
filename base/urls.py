@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
+from api.views import apiView
 
 urlpatterns = [
     path('', views.homeView, name='homeView'),
@@ -18,7 +19,7 @@ urlpatterns = [
     path('contact/', views.ContactView, name='contactView'),
     #for password reset function
 
-    path('api-documentation/', views.apiView, name='api-documentation')
+    path('api-documentation/', apiView.as_view(), name='api-documentation')
   
 
 ]
