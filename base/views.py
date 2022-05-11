@@ -26,7 +26,7 @@ def loginView(request):
             login(request, user)
             return redirect('profileView')
         else:
-            messages.error(request, 'Your credentials did not match ours')    
+            messages.error(request, 'Your credentials did not match ours', )    
     context={'form':form}        
     return render(request, 'main/login.html', context)
 
