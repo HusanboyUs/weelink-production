@@ -55,8 +55,8 @@
                   <div class="signup-link">
                      Not a member? <a href="{%url 'registerView'%}">Signup now</a>
                      <br>
-                     <!--<a href="{% provider_login_url 'google' %}">Login with Google</a> -->
-                     <a href="{% provider_login_url "openid" openid="https://www.google.com/accounts/o8/id" next="/success/url/" %}">Googles</a>
+                     <a href="{% provider_login_url 'google' %}">Login with Google</a> 
+                     
 
                      
                     {% if messages %}
@@ -69,16 +69,7 @@
                  </ul>
                     {% endif %}
 
-                    
+
                   </div>
                   
                </form>
-
-
-               
-               
-            </div>
-         </div>
-      </div>
-   </body>
-</html>

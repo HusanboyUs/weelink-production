@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save,pre_save
 from django.dispatch import receiver
 from django.utils.text import slugify
+from django.contrib.auth import get_user_model
 
 
 class Profile(models.Model):
@@ -15,7 +16,7 @@ class Profile(models.Model):
     facebook=models.CharField(max_length=100)
     telegram=models.CharField(max_length=100)
     created=models.DateTimeField(auto_now_add=True)
-    slug=models.SlugField(unique=True, blank=True, null=True)
+    slug=models.SlugField( blank=True, null=True)
     verif=models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):

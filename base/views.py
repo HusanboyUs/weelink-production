@@ -8,11 +8,14 @@ from django.contrib import messages
 
 
 def registerView(request):
+    form=userRegisterForm()
     if request.method=='POST':
         form=userRegisterForm(request.POST,)
         if form.is_valid():
             form.save()
-            return redirect('loginView')  
+            return redirect('loginView')
+    else:
+        pass          
     context={'form':form}
     return render(request, 'main/signup.html', context)        
 
@@ -28,7 +31,7 @@ def loginView(request):
         else:
             messages.error(request, 'Your credentials did not match ours', )    
     context={'form':form}        
-    return render(request, 'main/login.html', context)
+    return render(request, 'account/login.html', context)
 
 @login_required(login_url='loginView')
 def profileView(request):
