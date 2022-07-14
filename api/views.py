@@ -6,7 +6,6 @@ from .serializers import ProfileSerializer,LinkSerializer
 from base.models import Profile,ProfileLink
 
 class apiView(APIView):
-
     def get(self, request):
         profile=Profile.objects.all()
         serializer=ProfileSerializer(profile, many=True)

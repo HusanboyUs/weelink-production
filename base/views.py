@@ -106,10 +106,13 @@ def ContactView(request):
             form.save()
             messages.success(request, 'We have recieved your message successfully!')
             #return redirect('homeView')
+            #return another value or head to home view
     context={'form':form}        
     return render(request, 'main/contact.html', context)
 
 
 def apiView(request, *args, **kwargs):
     return render(request, 'main/apiDoc.HTML')
-           
+
+
+
