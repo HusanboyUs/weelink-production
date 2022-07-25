@@ -14,7 +14,7 @@ urlpatterns = [
     path('addLink/', views.addProfileLink, name='addProfileLink'),
     path('deleteLink/<str:pk>/', views.deleteProfileLink, name='deleteLink' ),
     #slug for searching the user
-    path('<slug:user_slug>', views.userView, name='viewPage'), 
+    path('<slug:user_slug>/', views.userView, name='viewPage'), 
     #path for conatact Page
     path('contact/', views.ContactView, name='contactView'),
     #for password reset function
