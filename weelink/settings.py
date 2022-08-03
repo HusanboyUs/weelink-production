@@ -26,12 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
-
-ALLOWED_HOSTS = ["*"]
-
-
-# Application definition
-
+ALLOWED_HOSTS = ["www.weelink.pl","127.0.0.1","weelink-beta.herokuapp.com"]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -110,12 +105,12 @@ DATABASES={
         'ENGINE':'django.db.backends.postgresql_psycopg2',
         'NAME': 'dd7v2qqn3vmed6',
         'USER':'jfilbzlgxibmhb',
-        'PASSWORD':'97f2ffb2f9ea0b77ab9759b63567d40d2c1326222b84eae0b644d81a4849e6c2',
+        'PASSWORD':config('PASSWORD'), #xa-xa I am lazy
         'HOST':'ec2-44-194-167-63.compute-1.amazonaws.com',
         'PORT':'5432',
     }
 }
-
+ 
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
