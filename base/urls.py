@@ -3,6 +3,8 @@ from . import views
 from django.contrib.auth import views as auth_views
 from api.views import apiView
 
+
+
 urlpatterns = [
     path('', views.homeView, name='homeView'),
     #for loggin and register links
@@ -16,10 +18,10 @@ urlpatterns = [
     #slug for searching the user
     path('<slug:user_slug>/', views.userView, name='viewPage'), 
     #path for conatact Page
-    path('contact/', views.ContactView, name='contactView'),
+    path('contact', views.ContactView, name='contactView'),
     #for password reset function
 
-    path('api-documentation/', apiView.as_view(), name='api-documentation')
+    path('api-documentation', apiView.as_view(), name='api-documentation')
   
 
 ]

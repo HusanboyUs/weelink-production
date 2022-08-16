@@ -1,7 +1,7 @@
 import re
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required,permission_required
 from .models import Profile, ProfileLink
 from .forms import ContactForm, userRegisterForm,updateProfileForm,addLinksForm,editProfileLinkForm
 from django.contrib import messages
@@ -111,8 +111,6 @@ def ContactView(request):
     return render(request, 'main/contact.html', context)
 
 
-def apiView(request, *args, **kwargs):
-    return render(request, 'main/apiDoc.HTML')
 
 
 
