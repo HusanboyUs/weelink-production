@@ -12,7 +12,9 @@
     <link rel="stylesheet"  type="text/css" href="{%static 'styles/profile.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+
+
+
     <div class="profile-card">
         <div class="card-header">
             <div class="pic">
@@ -57,11 +59,20 @@
                     <a href="http://www.weelink.pl/{{user.userprofile.slug}}" class="btn btn-outline-dark" type="button" style="background-color: #F73F52; color: white;"><i class="fa-solid fa-eye"></i> Preview</a>    
                 {%else%}
                 <div class="alert alert-danger" role="alert">
-                    Please finish your profile to get complete setup by entering Update Profile
+                    Please complete your profile to get full setup.
                   </div>
-                {%endif%}    
+                {%endif%}
+                
+                
                   
-            
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        Starting November between 25th-30th, 2022 will go off due to some changes in our server side! Sorry for inconvenience! 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                
+
+
+                <body>
                 
                     <a href="{% url 'updateProfileView' %}" class="btn btn-lg  bg-primary " type="button" style="background-color: #F73F52; color: white;"><i class="fa-solid fa-user"></i> Update Profile</a>
                     <a href="{% url 'addProfileLink' %}" class="btn btn-lg  bg-secondary " type="button" style="background-color: #F73F52; color: white;"><i class="fa-solid fa-circle-plus"></i> Add Links</a> 
@@ -74,4 +85,6 @@
     </div>
     
 </body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </html>
