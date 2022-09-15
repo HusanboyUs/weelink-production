@@ -2,7 +2,7 @@ import re
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required,permission_required
-from .models import Profile, ProfileLink
+from .models import Profile, ProfileLink,Projects
 from .forms import ContactForm, userRegisterForm,updateProfileForm,addLinksForm,editProfileLinkForm
 from django.contrib import messages
 
@@ -88,7 +88,8 @@ def userView(request, user_slug):
     try:
         profile=get_object_or_404(Profile, slug=user_slug)
         links=ProfileLink.objects.filter(user=profile)
-        context={'profile':profile, 'links':links}
+        projects=Projects.objects.filter(user=profile)
+        context={'profile':profile, 'links':links, 'projects':projects}
     except:
         return render(request, 'main/not404.html')    
     return render(request, 'main/user2.html', context)

@@ -2,17 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
-*{
-    
-    margin: 0;
-    padding: 0;
-    font-family: "Ubuntu", sans-serif;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-}
+
 body{
-    
+
     height: 100vh;
     background: #be2edd;
     background-size: cover;
@@ -22,7 +14,7 @@ body{
 }
 
 .profile-card{
-    margin-top: 200px;
+    margin-top: 10vh  !important;
     padding-top: 1vh;
     width: 500px;
     text-align: center;

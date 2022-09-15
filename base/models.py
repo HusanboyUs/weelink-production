@@ -3,8 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save,pre_save
 from django.dispatch import receiver
 from django.utils.text import slugify
-from django.contrib.auth import get_user_model
-
+import random
 
 class Profile(models.Model):
     user=models.OneToOneField(User, on_delete=models.CASCADE, related_name='userprofile')
@@ -73,4 +72,34 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.summary
+
+
+#not migrated for now
+
+class Blog(models.Model):
+    pass
+
+
+class Projects(models.Model):
+    user=models.ForeignKey(Profile, on_delete=models.CASCADE)
+    avatar_name=models.CharField(max_length=20, default='main stack: Django', help_text='what was your main stack', null=True, blank=True)
+    project_name=models.CharField(max_length=25, default='my project name', help_text='your project name', null=True, blank=True)
+    project_link=models.CharField(max_length=200, null=True,)
+    project_description=models.TextField(max_length=100, default='summary about your project', help_text='pitch the main part of your project', null=True, blank=True)
+    project_date=models.DateTimeField(auto_now_add=True, null=True, blank=True)
+
+
+    class Meta:
+        verbose_name='Projects'
+        verbose_name_plural='Projects'
+
+    def __str__(self):
+        return self.project_name
+
+
+
+
+
+
+
 
