@@ -74,8 +74,8 @@ class Contact(models.Model):
         return self.summary
 
 
-#not migrated for now
 
+#not migrated for now
 class Blog(models.Model):
     pass
 
@@ -92,6 +92,7 @@ class Projects(models.Model):
     class Meta:
         verbose_name='Projects'
         verbose_name_plural='Projects'
+        ordering=['-project_date']
 
     def __str__(self):
         return self.project_name
