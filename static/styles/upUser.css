@@ -19,10 +19,10 @@
   --first-color-alt: hsl(var(--hue), var(--sat), 57%); /* -4% */
   --title-color: hsl(var(--hue), 12%, 15%);
   --text-color: hsl(var(--hue), 12%, 45%);
-  --text-color-light: hsl(var(--hue), 8%, 75%);
+  --text-color-light: black;
   --text-color-lighten: hsl(var(--hue), 8%, 92%);
   --body-color: hsl(var(--hue), 100%, 99%);
-  --container-color: #fff;
+  --container-color: #543c3c;
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -49,6 +49,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  
 }
 
 body {
@@ -57,6 +58,7 @@ body {
   background-color: var(--body-color);
   color: #005f73;
   transition: .3s; /* For animation dark mode */
+  
 }
 
 h1, h2, h3 {

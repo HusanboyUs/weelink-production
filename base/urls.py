@@ -21,7 +21,7 @@ urlpatterns = [
     path('contact', views.ContactView, name='contactView'),
     #for password reset function
 
-    #path('api-documentation', apiView.as_view(), name='api-documentation')
+    path('api-documentation', views.api_view, name='api-documentation')
   
 
 ]

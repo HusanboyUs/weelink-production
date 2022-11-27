@@ -24,4 +24,6 @@ class TestViews(TestCase):
     def profile_view_user(self):
         client=self.client()
         response=client.get(self.profile_view)
-        self.assertEqual(response.status_code, 200)   
+        self.assertEqual(response.status_code, 200) 
+
+           

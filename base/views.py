@@ -1,11 +1,10 @@
-import re
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required,permission_required
 from .models import Profile, ProfileLink,Projects
 from .forms import ContactForm, userRegisterForm,updateProfileForm,addLinksForm,editProfileLinkForm
 from django.contrib import messages
-
+from django.views.generic import TemplateView
 
 def registerView(request):
     form=userRegisterForm()
@@ -111,6 +110,11 @@ def ContactView(request):
     context={'form':form}        
     return render(request, 'main/contact.html', context)
 
+class ApiView(TemplateView):
+    template_name='main/apiDoc.html'
+
+
+api_view=ApiView.as_view()
 
 
 

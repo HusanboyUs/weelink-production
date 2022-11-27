@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
-ALLOWED_HOSTS = ["www.weelink.pl","127.0.0.1","weelink-beta.herokuapp.com"]
+ALLOWED_HOSTS = ["www.weelink.pl","127.0.0.1","weelink-beta.herokuapp.com","up.railway.app"]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -74,7 +74,7 @@ ROOT_URLCONF = 'weelink.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
