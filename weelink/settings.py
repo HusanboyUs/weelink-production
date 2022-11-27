@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
-ALLOWED_HOSTS = ["www.weelink.pl","127.0.0.1","weelink-beta.herokuapp.com","up.railway.app"]
+ALLOWED_HOSTS = ["www.weelink.pl","127.0.0.1","weelink-beta.herokuapp.com","web-production-b7e2.up.railway.app"]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
