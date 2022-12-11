@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # for api
     'api',
     'rest_framework',
+    'corsheaders',
 ]
 
 AUTHENTICATION_BACKENDS = [
