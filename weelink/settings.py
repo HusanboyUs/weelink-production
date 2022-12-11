@@ -68,7 +68,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+CSRF_TRUSTED_ORIGINS = ['https://web-production-b7e2.up.railway.app']
+
 
 ROOT_URLCONF = 'weelink.urls'
 
