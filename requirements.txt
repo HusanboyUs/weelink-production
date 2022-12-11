@@ -9,6 +9,7 @@ cryptography==36.0.2
 defusedxml==0.7.1
 distlib==0.3.4
 Django==4.0.3
+django-cors-headers==3.13.0
 django-allauth==0.49.0
 djangorestframework==3.13.1
 filelock==3.6.0
