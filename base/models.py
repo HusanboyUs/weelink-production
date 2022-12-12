@@ -5,6 +5,7 @@ from django.dispatch import receiver
 from django.utils.text import slugify
 import random
 
+#profile model for users
 class Profile(models.Model):
     user=models.OneToOneField(User, on_delete=models.CASCADE, related_name='userprofile')
     name=models.CharField(max_length=100)
