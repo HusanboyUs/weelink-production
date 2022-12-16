@@ -1,0 +1,89 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet"  type="text/css" href="{%static 'styles/profile.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js">
+</head>
+
+
+
+    <div class="profile-card">
+        <div class="card-header">
+            <div class="pic">
+                {%if user.userprofile.avatar%}
+                    <img id="image" src="{{user.userprofile.avatar.url}}" alt="Avatar Pic">
+                {%else%}
+                    <img src="https://cdn-icons-png.flaticon.com/512/3237/3237472.png" alt="Avatar Pic">
+                {%endif%}
+                
+                
+            </div>
+              
+            {%if user.userprofile.name%}
+                <div class="name">{{user.userprofile.name}}</div>    
+            {%else%}
+                <div class="name">{{request.user}}</div> 
+            {%endif%}        
+            <div class="desc">{{user.userprofile.bio}}</div>
+            <div class="location"  style="color: white; font-size: small;"><i class="fa-solid fa-mountain-city"></i> Based in</a> {{user.userprofile.location}}</div>
+            <div class="sm">
+                <a href="https://www.facebook.com/{{user.userprofile.facebook}}/" class="fab fa-facebook " style="text-decoration: none;"></a>
+                <a href="https://www.instagram.com/{{user.userprofile.instagram}}/" class="fab fa-instagram" style="text-decoration: none;"></a>
+                <a href="https://t.me/{{user.userprofile.telegram}}" class="fab fa-telegram" style="text-decoration: none;"></a>
+                
+                
+            </div>   
+        </div>
+        <div class="card-footer">
+            <div class="d-grid gap-2">
+                <!--
+               {%   for data in userlinks   %}
+                    <a href="{{ data.link}}" class="btn btn-lg  bg-success" type="button" style="background-color: #F73F52; color: white;">{{  data.link_name}}</a>
+               {%   endfor  %}
+                <br>
+                -->
+                {%for links in links%}
+                    <a href="{{links.link}}" class="btn btn-outline-success">{{links.link_name}}</a>
+                    <a href="{%url 'deleteLink' links.id%}" class='btn btn-outline-danger type="button'>Delete {{links}}</a>
+                {%endfor%}
+                
+                {%if user.userprofile.name%}
+                    <a href="http://www.weelink.pl/{{user.userprofile.slug}}" class="btn btn-outline-dark" type="button" style="background-color: #F73F52; color: white;"><i class="fa-solid fa-eye"></i> Preview</a>    
+                {%else%}
+                <div class="alert alert-danger" role="alert">
+                    Please complete your profile to get full setup.
+                  </div>
+                {%endif%}
+
+                <body>
+                
+                    <a href="{% url 'updateProfileView' %}" class="btn btn-lg  bg-primary " type="button" style="background-color: #F73F52; color: white;"><i class="fa-solid fa-user"></i> Update Profile</a>
+                    <a href="{% url 'addProfileLink' %}" class="btn btn-lg  bg-secondary " type="button" style="background-color: #F73F52; color: white;"><i class="fa-solid fa-circle-plus"></i> Add Links</a> 
+               
+                </div> 
+                
+        </div> 
+        
+        
+    </div>
+
+
+
+    
+    
+</body>
+<!-- JavaScript Bundle with Popper -->
+
+<script src="{%static 'js/imageCrop.js'%}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</html>

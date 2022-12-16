@@ -1,0 +1,107 @@
+{%load static%}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+        
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet"  type="text/css" href="{%static 'styles/upUser.css' %}">
+
+        <title>User-{{profile.name}}</title>
+    </head>
+    <body>
+        <!--=============== HEADER ===============-->
+        <header class="profile container">
+            <!-- Theme button -->
+            <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+            <div class="profile__container grid">
+                <div class="profile__data">
+                    <div class="profile__border">
+                        <div class="profile__perfil">
+                            <!-- Insert your image, according to the example size of the portfolio -->
+                            {%if profile.avatar%}
+                                <img src="{{profile.avatar.url}}" alt="Your Picture">
+                            {%else%}   
+                                <img src="https://cdn-icons-png.flaticon.com/512/3237/3237472.png" alt="Avatar Pic"> 
+                            {%endif%}    
+                        </div>
+                    </div>
+                    
+                    {%if profile.verif == True%}
+                        <h2 class="profile__name">{{profile.name}} <img src="https://img.icons8.com/color/15/000000/verified-account.png"/></h2>
+                    {%else%}
+                        <h2 class="profile__name">{{profile.name}}</h2>
+                    {%endif%}    
+
+                        <h3 class="profile__profession">{{profile.location}}</h3>
+                        <h3 class="profile__profession">{{profile.bio}}</h3>
+                   
+
+                    <ul class="profile__social">
+                        <a href="https://www.facebook.com/{{profile.facebook}}/" target="_blank" class="profile__social-link">
+                            <i class="ri-facebook-line"></i>
+                        </a>
+                        <a href="https://www.instagram.com/{{profile.instagram}}/" target="_blank" class="profile__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="https://t.me/{{profile.telegram}}" target="_blank" class="profile__social-link">
+                            <i class="ri-telegram-line"></i>
+                        </a>
+                    </ul>
+                </div>
+
+               {%for links in links%}
+                <div class="profile__buttons">
+                    <a download="" href="{{links.link}}" class="button">
+                        {{links.link_name}} <i class="ri-link"></i>
+                    </a>  
+                </div>
+                {%endfor%}
+                
+                
+            </div>
+        </header>
+
+        
+
+        <!--=============== MAIN ===============-->
+        <main class="main">
+            <section class="filters container">
+                <!--=============== FILTERS TABS ===============-->
+                <ul class="filters__content">
+                    <button  class="filters__button filter-tab-active" data-target="#projects" style="align-items: center;">
+                        <a href="{% url 'loginView' %}" class="filters__button filter-tab-active">My Weelink</a>
+                    </button>
+                    <button class="filters__button" data-target="#skills">
+                        <a href="{% url 'homeView' %}" class="filters__button ">Home</a> 
+                    </button>
+                </ul>
+
+            </section>
+        </main>
+
+
+        
+        {%include "main/blog.html"%}
+        <!--=============== FOOTER ===============-->
+        <footer class="footer container">
+            <span class="footer__copy">
+                &#169; Bedimcode and Weelink collaboration
+            </span>
+        </footer>
+
+        <!--=============== SCROLLREVEAL ===============-->
+        <script src="{%static 'js/scrollreveal.js' %}"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="{%static 'js/main.js' %}"></script>
+    </body>
+</html>

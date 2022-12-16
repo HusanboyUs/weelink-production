@@ -1,0 +1,47 @@
+{%load static%}
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Add Links</title>
+      <link rel="stylesheet" href="{%static 'styles/addLinks.css'%}">
+      <!-- bootstrap cdn link -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   </head>
+   <body>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-4 offset-md-4 mail-form">
+               <h2 class="text-center">
+                  Add Links
+               </h2>
+               <p class="text-center">
+                  You will be able to delet them after adding
+               </p>
+              
+               
+               <form  method="post">
+                   {%csrf_token%}
+                   
+                  <div class="form-group">
+                    {{form.link_name}}
+                  </div>
+                  <div class="form-group">
+                     {{form.link}}
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control button btn-primary" type="submit" nvalue="Send" placeholder="Subject">
+                    
+                  </div>
+                  
+               </form>
+               <a href="{%url 'profileView'%}" class="form-control button btn-danger  text-center" >Go Back</a>
+               {{form.errors}}
+            
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
+</html>

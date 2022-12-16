@@ -1,0 +1,1 @@
+web: gunicorn weelink.wsgi --log-file -

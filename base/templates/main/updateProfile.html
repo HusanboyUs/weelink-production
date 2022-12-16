@@ -1,0 +1,65 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="{% static 'styles/profiler.css'%}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Edit your Profile-{{request.user}}</div>
+    <div class="content">
+
+
+      <form action="#" method="POST" accept="image/" enctype='multipart/form-data' >
+          {%csrf_token%}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" required {{form.name}}
+          </div>
+          <div class="input-box">
+            <span class="details">Location</span>
+            <input type="text" placeholder="Enter your username" required {{form.location}}
+          </div>
+          <div class="input-box">
+            <span class="details">Bio</span>
+            <input type="text" placeholder="For exp: Musician from Warsaw" required {{form.bio}}
+          </div>
+          <div class="input-box">
+            <span class="details">Instagram</span>
+            <input type="text" placeholder="Your Instagram" required {{form.instagram}}
+          </div>
+          <div class="input-box">
+            <span class="details">Facebook</span>
+            <input type="text" placeholder="Your Facebook" required {{form.facebook}}
+          </div>
+          <div class="input-box">
+            <span class="details">Telegram</span>
+            <input type="text" placeholder="Your Telegram" required {{form.telegram}}
+          </div>
+          <div class="input-box">
+            <span class="details">Your link name</span>
+            <input type="text" placeholder="For exp: kacper_mafia" required {{form.slug}}
+          </div>
+          <div class="input-box">
+            <span class="details">Your Profile Pic</span>
+            {{form.avatar}}
+          </div>
+          <p>Your avatar might not appear until we fetch your social links!</p>
+        </div>
+        <div class="button">
+          <input type="submit" value="Edit">
+        </div>
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+</body>
+</html>

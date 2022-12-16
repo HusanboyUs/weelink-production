@@ -1,0 +1,28 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Invalid User</title>
+      <link rel="stylesheet" href="{%static 'styles/not404.css'%}">
+   </head>
+   <body>
+      <div id="error-page">
+         <div class="content">
+            <h2 class="header" data-text="404">
+               404
+            </h2>
+            <h4 data-text="Opps! Page not found">
+               Opps! User is not found
+            </h4>
+            <p>
+               Sorry, requested user is not valid
+            </p>
+            <div class="btns">
+               <a href="{%url 'homeView'%}">return home</a>
+               <a href="{%url 'contactView'%}">report problem</a>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

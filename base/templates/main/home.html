@@ -1,0 +1,180 @@
+{%load static%}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+        <link rel="icon" type="image/x-icon" href="https://img.icons8.com/office/80/000000/myspace.png"">
+
+        <title>Weelink</title>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7415186926060200"
+        crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--=============== HEADER ===============-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">WEELINK</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About us</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact us</a>
+                        </li>
+
+                        <i class='bx bx-toggle-left change-theme' id="theme-button"></i>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+
+                
+                <a href="{% url 'loginView'%}" class="button button__header">My Profile </a>
+            </nav>
+        </header>
+
+
+        
+
+
+
+        <main class="main">
+            <!--=============== HOME ===============-->
+            <section class="home section" id="home">
+                <div class="home__container container grid">
+                    <!--svg-->
+                    <img src="{%static 'images/bg-anim.gif' %}" alt="image">
+                    
+                            
+
+                    <div class="home__data">
+                        <h1 class="home__title">Share links <br> Simple and Free</h1>
+                        <p class="home__description">Share more with your followers in a single click.Your one and unique bio link.</p>
+
+                        <a href="{%url 'registerView' %}" class="button">Start for free</a>
+
+                    </div>   
+                </div>
+            </section>
+
+            <!--=============== SERVICES ===============-->
+            <section class="services section container" id="services">
+                <h2 class="section__title">Weelink newsletter<br> </h2>
+                <div class="services__container grid">
+                    <div class="services__data">
+                        <h3 class="services__subtitle">Free customizible Profile</h3>
+                        <!--svg-->
+                        <p class="services__description">Use Weelink services with no fee of charge</p>
+                        <div>
+                            <a href="https://husanboyusmonov.herokuapp.com/blog/" class="button button-link">Running since March 2022</a>
+                        </div>
+                    </div>
+
+                    <div class="services__data">
+                        <h3 class="services__subtitle">Show more of you</h3>
+                        <!--svg-->
+                        <p class="services__description">Let's show what you have been doing with one page</p>
+                        <div>
+                            <a href="https://husanboyusmonov.herokuapp.com/blog/" class="button button-link">Next Patch</a>
+                        </div>
+                    </div>
+
+                    <div class="services__data">
+                        <h3 class="services__subtitle">Unlimited/Smart Link</h3>
+                        <!--svg-->
+                        <p class="services__description">Feel free to add your desired limit of links</p>
+                        <div>
+                            <a href="https://husanboyusmonov.herokuapp.com/blog/" class="button button-link">Next Patch</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!--=============== ABOUT ===============-->
+            <section class="about section container" id="about">
+                <div class="about__container grid">
+                    <div class="about__data">
+                        <h2 class="section__title-center">Discover More <br> About Us</h2>
+                        <p class="about__description">Create and manage multiple bio link pages for your personal accounts or for a team from one dedicated dashboard.
+                        </p>
+                    </div>
+                    <img src="{%static 'images/bg-anim2.gif' %}" alt="image">
+                    <!--svg-->
+                </div>
+            </section>
+
+            <!--=============== SECURITY ===============-->
+            <!--
+            <section class="security section container">
+                <div class="security__container grid">
+                    <div class="security__data">
+                        <h2 class="section__title-center">Your Safety Is <br> Important</h2>
+                        <p class="security__description">When your order reaches you, we have the health safety protocols, 
+                            so that you are protected from any disease. Watch the video of how the delivery is made.
+                        </p>
+                    </div>
+
+                    
+                </div>
+            </section>
+            -->
+
+            <!--=============== SERVICES ===============-->
+
+            <!--=============== APP ===============-->
+          
+
+            <!--=============== CONTACT US ===============-->
+            <section class="contact section container" id="contact">
+                <div class="contact__container grid">
+                    <div class="contact__content">
+                        <h2 class="section__title-center">Contact Us From <br> Here</h2>
+                        <p class="contact__description">You can contact us from here, you can write to us, 
+                            call us or visit , we will gladly assist you.</p>
+                    </div>
+
+                    <ul class="contact__content grid">
+                        <li class="contact__address">Email:  <span class="contact__information">khusanghost@gmail.com</span></li>
+                        <li class="contact__address">Location: <span class="contact__information">Poland, Warsaw</span></li>
+                    </ul>
+
+                    <div class="contact__content">
+                        <a href="{%url 'contactView'%}" class="button">Contact Us</a>
+                    </div>
+                </div>
+                <tr>
+                <a href="https://storyset.com/online">Online illustrations by Storyset</a>
+                </tr>
+                <br>
+                <th style="margin-left: 25vh;"><a href="">API</a></th>
+                
+            </section>
+            
+        </main>
+
+        <!--=============== FOOTER ===============-->
+        
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+        </a>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="{%static 'js/home.js'%}"></script>
+    </body>
+</html>
