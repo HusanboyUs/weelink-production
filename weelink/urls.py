@@ -23,3 +23,4 @@ urlpatterns += [
             'document_root': settings.MEDIA_ROOT,
         }),
     ]
+#ssh-keygen -t rsa -b 4096 -C “husanghost@gmail.com”
