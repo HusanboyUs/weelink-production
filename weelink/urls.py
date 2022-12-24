@@ -12,11 +12,11 @@ def userError(request):
 
 urlpatterns = [
     path('adminlar/', admin.site.urls),
-    path('beta/', include('base.urls')),
+    path('', include('base.urls')),
     path('accounts/', include('allauth.urls')),
     #api only
     path('api/', include('api.urls')),
-    path('',userError,name='for now only'),
+    
 ]
 urlpatterns += [
         re_path(r'^media/(?P<path>.*)$', serve, {
