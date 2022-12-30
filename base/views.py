@@ -5,7 +5,7 @@ from .models import Profile, ProfileLink,Projects
 from .forms import ContactForm, userRegisterForm,updateProfileForm,addLinksForm,editProfileLinkForm
 from django.contrib import messages
 from django.views.generic import TemplateView
-
+#imports
 def registerView(request):
     form=userRegisterForm()
     if request.method=='POST':
