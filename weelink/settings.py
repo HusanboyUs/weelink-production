@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-hq@ef3hm($gbuj3l(4zy*_33uhf%6)$l7w&e+av_cn84!b#o6o
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ["www.weelink.pl","127.0.0.1","weelink-beta.herokuapp.com","web-production-b7e2.up.railway.app"]
+ALLOWED_HOSTS = ["www.weelink.pl","127.0.0.1","weelink-beta.herokuapp.com","web-production-b7e2.up.railway.app","monkfish-app-bez3n.ondigitalocean.app"]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
